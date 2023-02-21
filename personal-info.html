@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URC/A[[lication</title>
+    <link rel="stylesheet" href="/Apply URC/styles.css">
+</head>
+<body>
+
+    <nav>
+        <h1>UENR Robotics Club</h1>
+        <p>"Slogan here"</p>
+        <p>Join the club now to learn the art of robotics and Artificial Intelligence</p>
+
+        <ul>
+            <li><a href="">Gallery</a></li>
+            <li><a href="/Apply URC/about.html">About Us</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <form action="https://formspree.io/f/mdovgzro" method="POST"> 
+            <!-- onsubmit="SendEmail(); reset(); return false" -->
+            <h2>Fill Form To Join Us Now</h2>
+
+            <label for="">Full Name <span>*</span></label> <br>
+            <input type="text" id="username" required placeholder="eg. John Doe">
+            <br><br>
+    
+            <label for="">Email Address <span>*</span></label> <br>
+            <input type="email" id="email" required placeholder="eg. johndoe26@gmail.com">
+            <br><br>
+    
+            <label for="">Phone Number (WhatsApp) <span>*</span></label> <br>
+            <input type="number" id="number" required placeholder="eg. 055 555 5555">
+            <br><br>
+
+            <label for="">Program Of Study <span>*</span></label> <br>
+            <input type="text" id="course" required>
+            <br><br>
+
+            <label for="">Feild to Join<span>*</span></label>
+            <select id="feild" class="inputbox" name="network" required>
+                <option value="">--Select your Feild--</option>
+                <option value="WEB">Robotics</option>
+                <option value="ROBOTICS">Web Development</option>
+            </select>
+            <br><br>
+
+            <label for="" id="message">Leave us a note (optional)</label>
+            <br><br>
+            <textarea name="note" id="message"></textarea>
+            <br><br>
+
+            <a href="">
+                <input type="submit" value="Submit" id="submit">
+            </a>
+            <br><br>
+
+            <div class="pay-buy">
+                <p>Already registered? Then <a href="/Apply URC/buy-shirt.html">Buy T-Shirt</a> or <a href="">Pay Dues</a></p>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <script>
+        function SendEmail(){
+            Email.send({
+            Host : "smtp.gmail.com",
+            Username : "jawadnassam264@gmail.com",
+            Password : "@jawadnassam.com26042005",
+            To : 'jawadnassam264@gmail.com',
+            From : document.getElementById('email').value,
+            Subject : "Enquiry to Join UENR Robotics Club",
+            Body : "Name: " + document.getElementById('username').value + 
+            '<br> Email: ' + document.getElementById('email').value + 
+            '<br> Phone Number: ' + document.getElementById('number').value + 
+            '<br> Course: ' + document.getElementById('course').value + 
+            '<br> Interested Feild: ' + document.getElementById('feild').value + 
+            '<br> Message: ' + document.getElementById('message').value
+        }).then(
+        message => alert("Your Information has been sent Succesfully!")
+        );
+        }
+
+    </script>
+    
+</body>
+</html>
